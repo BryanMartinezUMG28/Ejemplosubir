@@ -23,5 +23,8 @@ class TransporteSeeder extends Seeder
         $proveedor->telefono='73434243';
         $proveedor->save();
 
+        $this->call(TransporteSeeder::class);
+        $this->call(CamionSeeder::class);
+
     }
 }
