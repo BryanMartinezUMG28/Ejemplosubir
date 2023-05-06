@@ -4,9 +4,10 @@
 
 @section('contenido')
 
+    <br><br>
 
     <div class="card">
-        <h5 class="card-header">CRUD con laravel 8 y MYSQL</h5>
+        <h5 class="card-header text-center">Crud transportes</h5>
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-12">
@@ -17,23 +18,19 @@
                     @endif
                 </div>
             </div>
-            <h5 class="card-title text-center">Listado de personas en el sistema</h5>
+            <h5 class="card-title text-center">TRANSPORTES EXISTENTES</h5>
             <p>
-                <a href="{{route("personas.create")}}" class="btn btn-primary"> <span class="fas fa-user-plus"></span> Agregar nueva personas</a>
+                <a href="{{route("transportes.create")}}" class="btn btn-primary">Agregar nuevo transporte</a>
             </p>
-
             <hr>
-
 
             <p class="card-text">
             <div class="table table-responsive">
-
                 <table class="table table-sm table-bordered">
                     <thead>
-                    <th>Apellido paterno</th>
-                    <th>Apellido materno</th>
+                    <th>ID</th>
                     <th>Nombre</th>
-                    <th>Fecha de nacimiento</th>
+                    <th>Razon social</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                     </thead>
@@ -42,34 +39,32 @@
                     @foreach($datos as $item)
 
                         <tr>
-                            <td>{{$item->paterno }}</td>
-                            <td>{{$item->materno }}</td>
-                            <td>{{$item->nombre }}</td>
-                            <td>{{$item->fecha_nacimiento }}</td>
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->nombre }}</td>
+                            <td>{{ $item->razon_social }}</td>
                             <td>
 
-
-                                <form action="{{ route("personas.edit", $item->id) }}" method="GET">
+                                <form action="{{ route("transportes.edit", $item->id) }}" method="GET">
                                     <button class="btn btn-warning btn-sm">
                                         <span class="fas fa-user-edit"></span>
                                     </button>
                                 </form>
                             </td>
                             <td>
-                                <form action="{{ route("personas.show", $item->id) }}" method="GET">
+                                <form action="{{ route("transportes.show", $item->id) }}" method="GET">
 
                                     <button class="btn btn-danger btn-sm">
                                         <span class="fas fa-user-times"></span>
                                     </button>
                                 </form>
                             </td>
+
                         </tr>
                     @endforeach
+
                     </tbody>
                 </table>
-
                 <hr>
-
             </div>
 
             <div class="row">
@@ -78,8 +73,11 @@
                 </div>
             </div>
 
-            </p>
+
         </div>
+        </p>
     </div>
+    </div>
+
 
 @endsection
