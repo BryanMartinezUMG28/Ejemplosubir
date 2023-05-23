@@ -35,3 +35,13 @@
         </div>
     </div>
 @endsection
+@section('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+
+        swal("¿Algun dato a actualizar?", "Haz click en OK, para continuar y actualizar tus datos de transporte!");
+
+
+    </script>
+@endsection

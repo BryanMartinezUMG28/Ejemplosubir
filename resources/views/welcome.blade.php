@@ -36,6 +36,7 @@
                     <th>Fecha de nacimiento</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
+
                     </thead>
                     <tbody>
 
@@ -46,6 +47,7 @@
                             <td>{{$item->materno }}</td>
                             <td>{{$item->nombre }}</td>
                             <td>{{$item->fecha_nacimiento }}</td>
+
                             <td>
 
 
@@ -58,11 +60,12 @@
                             <td>
                                 <form action="{{ route("personas.show", $item->id) }}" method="GET">
 
-                                    <button class="btn btn-danger btn-sm">
+                                    <button class="btn btn-danger btn-sm" >
                                         <span class="fas fa-user-times"></span>
                                     </button>
                                 </form>
                             </td>
+
                         </tr>
                     @endforeach
                     </tbody>
@@ -83,3 +86,6 @@
     </div>
 
 @endsection
+
+
+

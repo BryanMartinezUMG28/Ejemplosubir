@@ -64,5 +64,8 @@ class TransportesController extends Controller
         $transportes = Transportes::find($id);
         $transportes->delete();
         return redirect()->route("transportes.index")->with("success", "¡Transporte eliminado con exito!");
+
     }
+
+
 }

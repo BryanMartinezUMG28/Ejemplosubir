@@ -106,3 +106,13 @@
 
 
 @endsection
+@section('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+
+        swal("¡BIENVENIDO!", "Has ingresado a sitio web de transportistas");
+
+
+    </script>
+@endsection

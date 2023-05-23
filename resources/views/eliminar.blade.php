@@ -47,3 +47,14 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+
+        swal("¡Estas en la vista de eliminar una empresa transportista!");
+
+
+    </script>
+@endsection
