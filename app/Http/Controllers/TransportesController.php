@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Transportes;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class TransportesController extends Controller
 {
@@ -17,6 +19,9 @@ class TransportesController extends Controller
     public function create()
     {
         return view('agregar');
+
+
+
     }
 
 
@@ -28,6 +33,8 @@ class TransportesController extends Controller
         $transportes->razon_social  = $request->post('razon_social');
         $transportes->save();
 
+        alert()->success('EXCELENTE','Haz agregado un nuevo transporte a la lista!');
+
         return redirect()->route('transportes.index')->with("success", "¡TRANSPORTE AGREGADO CON EXITO!");
     }
 
@@ -36,6 +43,9 @@ class TransportesController extends Controller
     {
         $transportes = Transportes::find($id);
         return view("eliminar", compact('transportes'));
+
+
+
 
     }
 
@@ -55,6 +65,8 @@ class TransportesController extends Controller
         $transportes->razon_social = $request->post('razon_social');
         $transportes->save();
 
+        alert()->info('ACTUALIZACION','Actualizacion completada. Nota: Los datos no seran los mismos, ya han sido actualizados completamente.', );
+
         return redirect()->route("transportes.index")->with("success", "¡Actualizacion de transporte con exito");
     }
 
@@ -63,6 +75,8 @@ class TransportesController extends Controller
     {
         $transportes = Transportes::find($id);
         $transportes->delete();
+
+        alert()->error('ELIMINADO','Transporte seleccionado ha sido eliminado.');
         return redirect()->route("transportes.index")->with("success", "¡Transporte eliminado con exito!");
 
     }
